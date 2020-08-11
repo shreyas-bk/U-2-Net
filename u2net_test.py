@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms#, utils
 # import torch.optim as optim
-import matplotlib.pyplot as plt
+
 import numpy as np
 from PIL import Image
 import glob
@@ -107,8 +107,7 @@ def main():
         # normalization
         pred = d1[:,0,:,:]
         pred = normPRED(pred)
-        plt.imshow(pred)
-        plt.show()
+        
         # save results to test_results folder
         if not os.path.exists(prediction_dir):
             os.makedirs(prediction_dir, exist_ok=True)
