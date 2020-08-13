@@ -78,12 +78,7 @@ def main():
                                         num_workers=1)
 
     # --------- 3. model define ---------
-    if(model_name=='u2net'):
-        print("...load U2NET---173.6 MB")
-        net = U2NET(3,1)
-    elif(model_name=='u2netp'):
-        print("...load U2NEP---4.7 MB")
-        net = U2NETP(3,1)
+    net = U2NETP(3,1)
     net.load_state_dict(torch.load(model_dir))
     if torch.cuda.is_available():
         net.cuda()
